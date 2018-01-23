@@ -4,12 +4,14 @@
 \alias{read_x3p}
 \title{Read an x3p file as an R Data Frame}
 \usage{
-read_x3p(path, profiley = TRUE)
+read_x3p(path, profiley = TRUE, automatic = TRUE)
 }
 \arguments{
 \item{path}{The file path to the x3p file}
 
-\item{profiley}{If TRUE, rotate the matrix (if necessary) to ensure a profile is taken across y}
+\item{profiley}{If TRUE, rotate the matrix to ensure a profile is taken across y}
+
+\item{automatic}{use file dimensions to determine whether file needs to be rotated. Assumes long dimension is on y, overwrites profiley. Only works sensibly for bullet lands. For more control, set automatic to FALSE}
 }
 \description{
 Read an x3p file as an R Data Frame
@@ -20,4 +22,3 @@ br411 <- read_x3p("Br4 Bullet 4-1.x3p")
 }
 
 }
-
